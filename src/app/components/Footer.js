@@ -18,7 +18,9 @@ function Footer() {
             {/* logo side */}
             <div className="flex flex-col w-1/2 md:p-0 py-4 gap-8">
               <img
-                src={"https://www.financetrust.co.ug/wp-content/uploads/2020/09/cropped-ftb-logo-01-e1599758445874.png"}
+                src={
+                  "https://www.financetrust.co.ug/wp-content/uploads/2020/09/cropped-ftb-logo-01-e1599758445874.png"
+                }
                 alt="footer_logo"
                 className="w-[10rem]"
               />
@@ -42,8 +44,8 @@ function Footer() {
                 })}
               </div>
               <p className="text-[16px] font-medium text-[#646464]">
-                Privacy Policy | © {new Date().getFullYear()} Financetrust <br />{" "}
-                Design by{" "}
+                Privacy Policy | © {new Date().getFullYear()} Financetrust{" "}
+                <br /> Design by{" "}
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -87,11 +89,11 @@ function Footer() {
                 Monday - Friday:
               </p>
               <p className="text-[16px] text-[#646464] font-medium">
-                7:00am - 21:00pm
+                8:30am - 5:00pm
               </p>
               <p className="text-[16px] text-[#646464] font-bold">Saturday:</p>
               <p className="text-[16px] text-[#646464] font-medium">
-                7:00am - 19:00pm
+                9:00am - 4:00pm
               </p>
               <p className="text-[16px] text-[#646464] font-bold ">
                 Sunday - Closed
