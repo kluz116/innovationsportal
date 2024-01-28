@@ -1,4 +1,5 @@
 import InnovationForm from "./components/InnovationForm";
+import Image from "next/image";
 
 export default function Home() {
   return (
