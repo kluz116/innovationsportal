@@ -14,19 +14,17 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-lime-500  fixed nav">
+    <div className="flex justify-between items-center w-full h-20 px-5 text-white bg-blue-800  fixed nav">
       <div>
         {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
-        <h1 className="text-4xl font-signature ml-2 text-white font-medium italic">
-          <a
-            className="link-underline link-underline-black"
-            href=""
-            target="_blank"
-            rel="noreferrer"
-          >
-            Innovations Portal
-          </a>
-        </h1>
+
+        <img
+          src={
+            "https://www.financetrust.co.ug/wp-content/uploads/2020/09/cropped-ftb-logo-01-e1599758445874.png"
+          }
+          alt="footer_logo"
+          className="w-[6rem] p-3"
+        />
       </div>
 
       <ul className="hidden md:flex">

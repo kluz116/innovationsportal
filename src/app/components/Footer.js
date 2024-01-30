@@ -25,9 +25,9 @@ function Footer() {
                 className="w-[10rem]"
               />
               <p className="text-[15px] font-medium text-[#646464]">
-                Take your health and body to the next level with our
-                comprehensive program designed to help you reach your fitness
-                goals.
+                Finance Trust Bank Uganda Limited is regulated by Bank of Uganda
+                No. A1.28. Deposits Protected by the Deposit Protection Fund up
+                to Shs. 10Million
               </p>
               {/* socials */}
               <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
@@ -58,24 +58,18 @@ function Footer() {
 
             {/* middle div */}
             <div className="flex flex-col gap-8 relative">
-              <p className="text-[22px] font-bold footer-main">Our Classes</p>
+              <p className="text-[22px] font-bold footer-main">Our Services</p>
 
-              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
+              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-lime-500"></span>
 
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Fitness Classes
+              <p className="text-[16px] hover:text-lime-500 cursor-pointer text-blue-800 font-medium hover:font-bold">
+                Alternative Channels
               </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Aerobics Classes
+              <p className="text-[16px] hover:text-lime-500 cursor-pointer text-blue-800 font-medium hover:font-bold">
+                Money Transfer Services
               </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Power Yoga
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Learn Machines
-              </p>
-              <p className="text-[16px] hover:text-[#ff0366] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                Full-body Strength
+              <p className="text-[16px] hover:text-lime-500 cursor-pointer text-blue-800 font-medium hover:font-bold">
+                Utilities Collections
               </p>
             </div>
 
@@ -83,19 +77,19 @@ function Footer() {
             <div className="flex flex-col gap-8 relative">
               <p className="text-[22px] font-bold footer-main">Working Hours</p>
 
-              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#ff0366]"></span>
+              <span className="top-[33px] absolute w-[7rem] h-[4px] bg-lime-500"></span>
 
-              <p className="text-[16px]  text-[#646464] font-bold">
+              <p className="text-[16px]  text-blue-800 font-bold">
                 Monday - Friday:
               </p>
               <p className="text-[16px] text-[#646464] font-medium">
                 8:30am - 5:00pm
               </p>
-              <p className="text-[16px] text-[#646464] font-bold">Saturday:</p>
+              <p className="text-[16px] text-blue-800 font-bold">Saturday:</p>
               <p className="text-[16px] text-[#646464] font-medium">
                 9:00am - 4:00pm
               </p>
-              <p className="text-[16px] text-[#646464] font-bold ">
+              <p className="text-[16px] text-blue-800 font-bold ">
                 Sunday - Closed
               </p>
             </div>

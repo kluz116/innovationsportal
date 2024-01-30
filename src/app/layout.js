@@ -9,11 +9,17 @@ import Footer from "./components/Footer";
 export const metadata = {
   title: "Innovation Portal",
   description: "This is an Innovation Portal for Financetrust Bank",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>
         <Navbar />
         {children}
