@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const InnovationForm = () => {
+  const [resMsg, setMsg] = useState("");
+  const [erroMsg, seterroMsg] = useState("");
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -20,21 +22,33 @@ const InnovationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const userData = {
-      name: data.name,
-      email: data.email,
-      description: data.description,
-    };
+    if (data.description === "" && data.name === "" && data.email === "") {
+      alert("Please fill in all fields to continue");
+      //seterroMsg("Please fill in all fields to continue");
+    } else {
+      const userData = {
+        name: data.name,
+        email: data.email,
+        description: data.description,
+      };
 
-    axios
-      .post("http://127.0.0.1:8000/api/innovation", userData)
-      .then((response) => {
-        console.log(response.statusText);
-      });
+      axios
+        .post("http://127.0.0.1:8000/api/innovation", userData)
+        .then((response) => {
+          setMsg(response.data.response);
+          setData({
+            name: "",
+            email: "",
+            description: "",
+          });
+        });
+    }
   };
 
   return (
     <main className="w-full p-3 bg-white rounded-md shadow-md ">
+      <h1 className="text-center text-lime-600 italic">{resMsg}</h1>
+
       <form onSubmit={handleSubmit} className="mt-6">
         <div className="mb-2">
           <label
@@ -72,20 +86,20 @@ const InnovationForm = () => {
             htmlFor="Description"
             className="block text-sm font-semibold text-blue-800"
           >
-            Description
+            Innovative Idea
           </label>
           <textarea
-            label="Description"
+            label="Innovative Idea"
             name="description"
             value={data.description}
             onChange={handleChange}
-            placeholder="Enter your description"
-            className="block w-full px-4 py-2 mt-2 text-blue-800 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            placeholder="Enter your Innovative Idea here"
+            className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40 text-1xl "
           />
         </div>
 
         <div className="mt-2">
-          <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-800 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+          <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-800 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
             Submit
           </button>
         </div>

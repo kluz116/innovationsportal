@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex min-h-full flex-col items-center justify-between p-24 ">
-      <div className="mb-5 grid text-center lg:max-w-8xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left text-2xl italic">
+      <div className="mb-5 grid text-center lg:max-w-8xl lg:w-full lg:mb-0 lg:grid-cols-2 lg:text-left text-2xl ">
         <div>
           <p>
             Welcome to business idea portal, from your creative innovative
@@ -25,7 +25,7 @@ export default function Home() {
           </ul>
         </div>
         <div>
-          <p className="text-black italic">
+          <p className="text-black ">
             You got an innovative idea, please share with us below...
           </p>
           <br />

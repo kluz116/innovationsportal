@@ -18,13 +18,11 @@ const Navbar = () => {
       <div>
         {/* <h1 className="text-5xl font-signature ml-2"><a className="link-underline hover:transition ease-in-out delay-150 hover:underline hover:decoration-solid" href="">Logo</a></h1> */}
 
-        <img
-          src={
-            "https://www.financetrust.co.ug/wp-content/uploads/2020/09/cropped-ftb-logo-01-e1599758445874.png"
-          }
-          alt="footer_logo"
-          className="w-[6rem] p-3"
-        />
+        <h1 className="text-3xl font-signature ml-2 italic">
+          <a className="link-underline  hover:decoration-solid" href="">
+            Innovations Portal
+          </a>
+        </h1>
       </div>
 
       <ul className="hidden md:flex">
@@ -50,7 +48,7 @@ const Navbar = () => {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
+              className="px-4 cursor-pointer capitalize py-6 text-3xl"
             >
               <Link onClick={() => setNav(!nav)} href={link}>
                 {link}
