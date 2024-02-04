@@ -46,7 +46,10 @@ const InnovationForm = () => {
   };
 
   return (
-    <main className="w-full p-3 bg-white rounded-md shadow-md ">
+    <main className="w-full m-4 p-3 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <p className="text-gray-600">
+        You got an innovative idea, please share with us below...
+      </p>
       <h1 className="text-center text-lime-600 italic">{resMsg}</h1>
 
       <form onSubmit={handleSubmit} className="mt-6">

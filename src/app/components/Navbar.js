@@ -24,6 +24,7 @@ const Navbar = () => {
           </a>
         </h1>
       </div>
+      
 
       <ul className="hidden md:flex">
         {links.map(({ id, link }) => (
