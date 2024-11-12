@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const InnovationForm = () => {
   const [resMsg, setMsg] = useState("");
-  const [erroMsg, seterroMsg] = useState("");
+  const [erroMsg, setErroMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -19,30 +20,49 @@ const InnovationForm = () => {
     });
   };
 
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErroMsg("");
+    setMsg("");
 
-    if (data.description === "" && data.name === "" && data.email === "") {
-      alert("Please fill in all fields to continue");
-      //seterroMsg("Please fill in all fields to continue");
-    } else {
-      const userData = {
-        name: data.name,
-        email: data.email,
-        description: data.description,
-      };
-
-      axios
-        .post("http://127.0.0.1:8000/api/innovation", userData)
-        .then((response) => {
-          setMsg(response.data.response);
-          setData({
-            name: "",
-            email: "",
-            description: "",
-          });
-        });
+    if (!data.name || !data.email || !data.description) {
+      setErroMsg("Please fill in all fields to continue");
+      return;
     }
+
+    if (!validateEmail(data.email)) {
+      setErroMsg("Please enter a valid email address");
+      return;
+    }
+
+    setIsLoading(true);
+    const userData = {
+      name: data.name,
+      email: data.email,
+      description: data.description,
+    };
+
+    axios
+      .post("http://127.0.0.1:8000/api/innovation", userData)
+      .then((response) => {
+        setMsg(response.data.response);
+        setData({
+          name: "",
+          email: "",
+          description: "",
+        });
+      })
+      .catch((error) => {
+        setErroMsg("An error occurred while submitting. Please try again.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -50,7 +70,8 @@ const InnovationForm = () => {
       <p className="text-gray-600">
         You got an innovative idea, please share with us below...
       </p>
-      <h1 className="text-center text-lime-600 italic">{resMsg}</h1>
+      {resMsg && <h1 className="text-center text-lime-600 italic">{resMsg}</h1>}
+      {erroMsg && <h1 className="text-center text-red-600 italic">{erroMsg}</h1>}
 
       <form onSubmit={handleSubmit} className="mt-6">
         <div className="mb-2">
@@ -102,8 +123,12 @@ const InnovationForm = () => {
         </div>
 
         <div className="mt-2">
-          <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-800 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-            Submit
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-800 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          >
+            {isLoading ? "Submitting..." : "Submit"}
           </button>
         </div>
       </form>
